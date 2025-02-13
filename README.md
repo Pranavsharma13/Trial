@@ -1,6 +1,6 @@
 # 📊 FundWise: Deciphering Mutual Fund Performance & Behavior
 
-![FundWise Banner]![Fundwiser Presentation_page-0001](https://github.com/user-attachments/assets/3b309a03-9c12-4fa2-88f3-375fce0ff835)
+![Fundwiser Presentation_page-0001](https://github.com/user-attachments/assets/3b309a03-9c12-4fa2-88f3-375fce0ff835)
 
 
 ## 🏆 Project Overview
@@ -30,16 +30,16 @@ The objective of this analysis is to decode mutual fund behavior, focusing on:
 ![Fundwiser Presentation_page-0005](https://github.com/user-attachments/assets/979caea8-2ad3-4c1e-93c8-f7f821ae915e)
 
 ### **Key Insights & Outcomes**
-📌 **Initial Investment Trends**: Investments range from $10 to $5B, with common entry points at $1,000, $2,500, and $1M.
-📌 **Maturity Trends**: 2015 saw the highest number of fund maturities (505), and average yields fluctuated from 0.03% (1968) to 22.35% (2015).
-📌 **ROI & Volatility**: High fluctuations in earlier years (e.g., 25.27% in 1974), but stabilizing in recent years.
-📌 **Morningstar Ratings**: Peaked in 1975 (4.50/5), bottomed in 2020 (1.099/5).
-📌 **Sectoral Allocation**: Financial services consistently dominate, with small funds focusing on financials, mid-sized funds in real estate, and large funds in technology.
-📌 **Fund Performance**:
+- 📌 **Initial Investment Trends**: Investments range from $10 to $5B, with common entry points at $1,000, $2,500, and $1M.
+- 📌 **Maturity Trends**: 2015 saw the highest number of fund maturities (505), and average yields fluctuated from 0.03% (1968) to 22.35% (2015).
+- 📌 **ROI & Volatility**: High fluctuations in earlier years (e.g., 25.27% in 1974), but stabilizing in recent years.
+- 📌 **Morningstar Ratings**: Peaked in 1975 (4.50/5), bottomed in 2020 (1.099/5).
+- 📌 **Sectoral Allocation**: Financial services consistently dominate, with small funds focusing on financials, mid-sized funds in real estate, and large funds in technology.
+- 📌 **Fund Performance**:
    - **Top Performer**: AGEIX (Return Ratio: 0.05810%)
    - **Bottom Performer**: CPXAX (Virtus Family)
    - **Safe Zone Funds**: ETAHX, GHYMX, ETCTX leading in 3, 5, and 10-year performance.
-📌 **Machine Learning Models**: Extra Tree Regressor outperformed other models (R² = 96.17%) in predicting fund returns.
+- 📌 **Machine Learning Models**: Extra Tree Regressor outperformed other models (R² = 96.17%) in predicting fund returns.
 
 ---
 
