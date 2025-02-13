@@ -1,4 +1,4 @@
-# 📊 FundWise: Deciphering Mutual Fund Performance & Behavior
+# 💶 FundWise: Deciphering Mutual Fund Performance & Behavior
 
 ![Fundwiser Presentation_page-0001](https://github.com/user-attachments/assets/3b309a03-9c12-4fa2-88f3-375fce0ff835)
 
