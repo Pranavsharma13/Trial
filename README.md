@@ -2,87 +2,141 @@
 
 ![FundWise Banner](https://github.com/user-attachments/assets/b96c2538-8181-4ebe-bb91-740b7e27eb9a)
 
-## 🏆 Overview
-FundWise is a comprehensive data analysis and machine learning project that aims to decipher mutual fund performance and behavior. The project provides insights into portfolio composition, risk-return profiles, and various factors influencing fund performance, helping investors make informed decisions.
+## 🏆 Project Overview
+FundWise is a comprehensive data analysis and machine learning project focused on evaluating mutual fund performance, exploring portfolio compositions, risk-return profiles, expense ratios, and predictive modeling to guide investment strategies. The project includes rigorous data cleaning, visualization, and predictive modeling for actionable insights.
 
-## 🔍 Project Structure
+## 📌 Table of Contents
+1. [Executive Summary](#executive-summary)
+2. [Introduction](#introduction)
+3. [Data Overview](#data-overview)
+4. [Data Cleaning & Preprocessing](#data-cleaning--preprocessing)
+5. [Exploratory Data Analysis](#exploratory-data-analysis)
+6. [Visualization & Findings](#visualization--findings)
+7. [Predictive Modeling](#predictive-modeling)
+8. [Fund Classification](#fund-classification)
+9. [Conclusion & Strategic Insights](#conclusion--strategic-insights)
+10. [Future Work](#future-work)
 
-### 1️⃣ Project Introduction
-- Background
-- Key Focus
-- Questions Explored
-- Stakeholders
+---
 
-[![Project Introduction](https://github.com/user-attachments/assets/077078da-bdc3-4cab-8a48-7bec0a34336a)](#project-introduction)
+## 🔹 Executive Summary
+### **Objective**
+The objective of this analysis is to decode mutual fund behavior, focusing on:
+- Portfolio composition & sectoral allocation
+- Risk-return profiles and expense ratios
+- Fund maturity trends and investor confidence
 
-### 2️⃣ Data Overview
-- Data Source: [Mutual Funds Dataset](https://www.kaggle.com/datasets/stefanoleone992/mutual-funds-and-etfs)
-- Dataset Size: 23,784 rows, 298 columns
-- Data Significance: Sectoral Allocation, Predictive Modeling, Risk Management
+### **Key Insights & Outcomes**
+📌 **Initial Investment Trends**: Investments range from $10 to $5B, with common entry points at $1,000, $2,500, and $1M.
+📌 **Maturity Trends**: 2015 saw the highest number of fund maturities (505), and average yields fluctuated from 0.03% (1968) to 22.35% (2015).
+📌 **ROI & Volatility**: High fluctuations in earlier years (e.g., 25.27% in 1974), but stabilizing in recent years.
+📌 **Morningstar Ratings**: Peaked in 1975 (4.50/5), bottomed in 2020 (1.099/5).
+📌 **Sectoral Allocation**: Financial services consistently dominate, with small funds focusing on financials, mid-sized funds in real estate, and large funds in technology.
+📌 **Fund Performance**:
+   - **Top Performer**: AGEIX (Return Ratio: 0.05810%)
+   - **Bottom Performer**: CPXAX (Virtus Family)
+   - **Safe Zone Funds**: ETAHX, GHYMX, ETCTX leading in 3, 5, and 10-year performance.
+📌 **Machine Learning Models**: Extra Tree Regressor outperformed other models (R² = 96.17%) in predicting fund returns.
 
-[![Data Overview](https://github.com/user-attachments/assets/81777286-d213-4048-9ce2-f97f8ba5633f)](#data-overview)
+---
 
-### 3️⃣ Exploratory Data Analysis (EDA)
-- Data Cleaning & Handling Missing Values
-- Distribution Analysis
-- Risk-Return Profiles
-- Fund Maturity Trends
+## 🔹 Introduction
+Mutual fund investment decisions require data-driven insights. This project seeks to understand how fund characteristics influence performance, providing actionable recommendations for investors.
 
-[![EDA](https://github.com/user-attachments/assets/bb670ae7-daf6-4225-b7b7-c8f08fbff8b8)](#exploratory-data-analysis)
+### **Key Business Questions**
+- How does portfolio composition impact sector exposure and risk?
+- What are the historical patterns in fund maturity and performance?
+- Can machine learning models improve fund return predictions?
 
-### 4️⃣ Visualization Design & Development
-- Sector Allocation Analysis
-- Initial Investment Distribution
-- ROI and Volatility Trends
-- Morningstar Ratings
+### **Stakeholders**
+- **Investment Committees & Fund Managers**: Data-backed decisions for fund allocation.
+- **Individual & Institutional Investors**: Strategic investment insights.
+- **Data Analysts & Scientists**: Research on financial market trends.
 
-[![Visualization](https://github.com/user-attachments/assets/73945c56-3ca4-4aab-9d4a-10d77848e6f5)](#visualization-design-and-development)
+---
 
-### 5️⃣ Machine Learning Model Development
-- Feature Engineering
-- Model Selection & Training
-- Performance Evaluation
+## 🔹 Data Overview
+📂 **Dataset**: MutualFunds.csv ([Kaggle](https://www.kaggle.com/datasets/stefanoleone992/mutual-funds-and-etfs))  
+📊 **Size**: 23,784 rows | 298 columns  
+💡 **Key Features**: Net assets, expense ratio, turnover, risk ratings, growth metrics, historical returns.
 
-[![Model Development](https://github.com/user-attachments/assets/4c71cdaa-ef4a-4556-8807-8a89905e4ade)](#machine-learning-model-development)
+---
 
-### 6️⃣ Fund Classification & Analysis
-- Top Performing & Bottom Performing Funds
-- Safe Zone Funds & Historical Returns
+## 🔹 Data Cleaning & Preprocessing
+✔ **Missing Data Handling**: Mean/zero-fill techniques applied to key columns.  
+✔ **Outlier Treatment**: Statistical detection & removal.  
+✔ **Feature Engineering**: Created a ‘Total Investment’ column for comprehensive portfolio analysis.
 
-[![Fund Classification](https://github.com/user-attachments/assets/0003cb91-c018-49fc-b495-5e52ae224b79)](#fund-classification)
+---
 
-### 7️⃣ Conclusion & Strategic Insights
-- Investment Trends
-- Portfolio Optimization Strategies
-- Risk Management Considerations
+## 🔹 Exploratory Data Analysis (EDA)
+📌 **Univariate, Bivariate & Multivariate Analysis**
+📊 **Key Findings**:
+- **ROI Trends**: Early years had high volatility; recent years show stabilization.
+- **Morningstar Ratings**: Fluctuated significantly, peaking in 1975 and dropping in 2020.
+- **Sectoral Allocation by Fund Size**:
+  - **Small Funds**: Highest in Financial Services.
+  - **Mid-Size Funds**: Dominated by Real Estate.
+  - **Large Funds**: Focus on Technology.
 
-[![Conclusion](https://github.com/user-attachments/assets/c0d51297-598c-4d47-9f31-a78e34a4e24c)](#conclusion-and-reflection)
+---
 
-## 🚀 Technologies Used
-- **Python**: Data Cleaning, Feature Engineering, Model Development
-- **Pandas, NumPy**: Data Processing
-- **Matplotlib, Seaborn**: Data Visualization
-- **Scikit-Learn**: Machine Learning Models
-- **Tableau, Power BI**: Interactive Dashboards
-- **SQL**: Data Querying
+## 🔹 Visualization & Findings
+📊 **Commencement & Maturity Trends**: 2015 had the highest fund maturity count.  
+📊 **Expense Ratio vs. Returns**: Negative correlation—lower expenses often yield better performance.  
+📊 **Fund Size & Investment Type**: Growth funds show a direct relationship with size in return rates.  
 
-## 📚 Key Learnings & Takeaways
-- Portfolio composition significantly impacts asset allocation and sector exposure.
-- ROI volatility has decreased over time, indicating market stabilization.
-- Medium-sized funds tend to perform better in long-term investments.
-- Model interpretability and risk management are crucial for financial predictions.
+---
 
-## 🎯 Next Steps
-✅ Expand dataset with additional financial indicators  
-✅ Incorporate Deep Learning models for advanced predictions  
-✅ Build an interactive dashboard for fund analysis  
-✅ Conduct time-series forecasting for fund growth trends  
+## 🔹 Predictive Modeling
+🧠 **Machine Learning Models Used**:
+- **Extra Tree Regressor**: Best predictive model with R² = 96.17%
+- **Random Forest**: R² = 95.09%
+- **Decision Tree**: R² = 87.94%
+
+📌 **Model Insights**:
+- **Higher fund ratings correlate with better return predictions.**
+- **Expense ratio plays a crucial role in fund sustainability.**
+
+---
+
+## 🔹 Fund Classification
+🏆 **Top 5 Performing Funds**
+1. **AGEIX** – Highest Return Ratio (0.05810%)
+2. **Cohen & Steers Funds** – Strong performers in small-sized funds.
+
+🚨 **Bottom 5 Performing Funds**
+1. **FFRLX** – Virtus Family underperformed.
+2. **FRICX** – William Blair held the lowest position.
+
+✅ **Safe Investment Funds**
+- **ETAHX (Small-sized)** – Best in 3, 5, and 10-year performance.
+- **GHYMX & ETCTX** – Stable historical returns.
+
+---
+
+## 🔹 Conclusion & Strategic Insights
+📌 **Key Takeaways**:
+- **Diversification is essential**: Small-sized funds perform well in Financial Services, while large funds thrive in Tech.
+- **Fund Ratings & ROI Correlation**: Ratings act as a strong indicator of performance.
+- **Expense Ratio Matters**: Funds with lower expense ratios tend to yield better returns.
+
+---
+
+## 🔹 Future Work
+✅ **Advanced Deep Learning**: Neural networks for fund return forecasting.  
+✅ **Portfolio Optimization Strategies**: AI-based allocation tools.  
+✅ **Interactive Dashboards**: Dynamic Tableau/Power BI visualizations.  
+✅ **Market Sentiment Analysis**: Using NLP to predict fund trends.
+
+---
 
 ## 📌 Get in Touch
 📧 pranavsharma1395@gmail.com  
 📞 +1 (778) 598-6373  
 🌐 [LinkedIn](https://www.linkedin.com/in/pranav-harish-sharma/)  
 
----
+🔗 **Project Repository**: [GitHub Link](https://github.com/user/FundWise)
 
+---
 📢 *"Empowering Investors with Data-Driven Insights!"*
