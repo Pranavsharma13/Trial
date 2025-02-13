@@ -5,6 +5,7 @@
 
 ## 🏆 Project Overview
 FundWise is a comprehensive data analysis and machine learning project focused on evaluating mutual fund performance, exploring portfolio compositions, risk-return profiles, expense ratios, and predictive modeling to guide investment strategies. The project includes rigorous data cleaning, visualization, and predictive modeling for actionable insights.
+![Fundwiser Presentation_page-0002](https://github.com/user-attachments/assets/dba15331-5081-4d35-8c98-f57ffbba10a1)
 
 ## 📌 Table of Contents
 1. [Executive Summary](#executive-summary)
@@ -39,7 +40,6 @@ The objective of this analysis is to decode mutual fund behavior, focusing on:
    - **Bottom Performer**: CPXAX (Virtus Family)
    - **Safe Zone Funds**: ETAHX, GHYMX, ETCTX leading in 3, 5, and 10-year performance.
 📌 **Machine Learning Models**: Extra Tree Regressor outperformed other models (R² = 96.17%) in predicting fund returns.
-![Fundwiser Presentation_page-0002](https://github.com/user-attachments/assets/dba15331-5081-4d35-8c98-f57ffbba10a1)
 
 ---
 
