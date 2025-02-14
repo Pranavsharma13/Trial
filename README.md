@@ -7,125 +7,117 @@ The RoadSense project leverages machine learning and deep learning techniques to
 Access the RoadSense App here: https://roadsense-trafficsaftey.streamlit.app/
 ![Screenshot 2025-02-13 at 8 10 36 PM](https://github.com/user-attachments/assets/76121b2f-6d29-45a8-bb9d-0b6be029584c)
 
+# 🚦 RoadSense: Advanced Predictive Modeling for Traffic Safety
+
+![RoadSense Banner](https://github.com/user-attachments/assets/roadsense-banner)
 
 ## 🏆 Project Overview
-RoadSense is a machine learning-driven initiative designed to predict and analyze traffic accident severity using the US-Accidents dataset, which contains over **2.25 million records** from 2016 to 2023. This project employs **Random Forest, LSTM, CNNs, Prophet**, and clustering techniques to assess accident patterns and severity based on weather, traffic, and temporal data.
+**RoadSense** is a machine learning-driven initiative designed to predict and analyze traffic accident severity using the **US-Accidents dataset**, which contains **over 2.25 million records** spanning **2016 to 2023**. The dataset includes **weather conditions, road characteristics, time of day, and accident specifics**, collected from law enforcement reports, traffic cameras, and weather stations.
 
-The project utilized **Python, Scikit-learn, TensorFlow, and Tableau** for **data processing, feature engineering, and visualization**. With a focus on actionable insights for traffic safety, the application was deployed using **Streamlit**, providing real-time predictive capabilities. In-depth feature engineering, including **dimensionality reduction** with **PCA** and **handling class imbalance using SMOTE**, resulted in the model achieving **86% accuracy**, with a strong emphasis on interpretability to drive better policy and safety decisions.
+The project employs **Random Forest, Gradient Boosting Machines (GBM), Deep Neural Networks (DNNs), Convolutional Neural Networks (CNNs), and Long Short-Term Memory Networks (LSTM)** to analyze accident trends, severity, and their correlation with environmental and traffic factors. It aims to provide **real-time accident prediction models** for policymakers, urban planners, and traffic safety authorities.
 
-The goal is to provide **actionable insights for policymakers, urban planners, and traffic safety authorities** by identifying high-risk factors and improving accident prevention strategies through **real-time predictive analytics**.
+---
 
 ## 📌 Table of Contents
 1. [Introduction](#introduction)
-2. [Dataset Overview](#dataset-overview)
-3. [Data Preprocessing & Feature Engineering](#data-preprocessing--feature-engineering)
-4. [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
-5. [Predictive Modeling](#predictive-modeling)
-6. [Model Interpretability](#model-interpretability)
-7. [Results & Insights](#results--insights)
-8. [Conclusion & Future Work](#conclusion--future-work)
+2. [Problem Statement](#problem-statement)
+3. [Project Goals & Objectives](#project-goals--objectives)
+4. [Dataset Overview](#dataset-overview)
+5. [Data Preprocessing & Feature Engineering](#data-preprocessing--feature-engineering)
+6. [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
+7. [Predictive Modeling](#predictive-modeling)
+8. [Results & Insights](#results--insights)
+9. [Model Interpretability](#model-interpretability)
+10. [Conclusion & Future Work](#conclusion--future-work)
 
 ---
 
 ## 🔹 Introduction
-Traffic accidents are a major global concern, causing approximately **1.35 million deaths** annually. Traditional safety measures are often reactive and costly. **RoadSense leverages machine learning** to predict accident severity based on **weather, traffic conditions, time, and geographical attributes**, allowing proactive accident prevention and improved traffic management.
+### **Context & Significance**
+Traffic accidents are a critical global issue, causing over **1.35 million deaths annually** and leading to major economic and societal burdens. The increasing complexity of urban traffic systems necessitates **data-driven safety measures**. Predictive modeling enables **proactive risk mitigation** by identifying accident-prone conditions before they occur.
 
-### **Key Research Questions**
-- What are the most critical factors influencing **severe** traffic accidents?
-- How can **real-time weather and traffic data** enhance predictive accuracy?
-- What are the **spatiotemporal patterns** of traffic accidents?
+---
+
+## 🔹 Problem Statement
+The project aims to address the following key questions:
+✔ **What are the most significant factors contributing to severe traffic accidents?**
+✔ **How can real-time weather and traffic data enhance accident severity predictions?**
+✔ **What are the spatiotemporal patterns of accidents, and how can they inform safety policies?**
+
+---
+
+## 🔹 Project Goals & Objectives
+### **Key Objectives**
+✔ **Develop accurate machine learning models** to predict accident severity.
+✔ **Identify key risk factors** (weather conditions, traffic signals, time of day, etc.).
+✔ **Analyze high-risk accident zones** using clustering techniques.
+✔ **Forecast accident trends** for proactive traffic safety interventions.
+✔ **Ensure model interpretability** for policymakers.
 
 ---
 
 ## 🔹 Dataset Overview
 📂 **Dataset**: US-Accidents (2016 - 2023) ([Kaggle](https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents))  
-📊 **Size**: 2.25 million records, 46 features  
+📊 **Size**: 2.25 million records | 46 features  
 🌍 **Geographical Coverage**: Entire contiguous US states  
 
 ### **Key Features**
-- **Severity**: Categorized into 4 levels (1 = Least Severe, 4 = Most Severe)
+- **Severity**: 1 (least severe) to 4 (most severe)
 - **Weather Conditions**: Rain, Snow, Fog, Temperature, Wind Speed, Visibility
-- **Time & Location**: Date, Time of Day, City, State, Road Type
-- **Traffic Infrastructure**: Presence of Traffic Signals, Stop Signs, Crosswalks
+- **Traffic Infrastructure**: Traffic Signals, Stop Signs, Crosswalks
+- **Location & Time**: Date, Time of Day, City, State, Road Type
 
 ---
 
 ## 🔹 Data Preprocessing & Feature Engineering
-✔ **Handling Missing Values**: 
-   - Imputation techniques used for missing weather and location data.
+✔ **Handling Missing Values**:
+   - Imputation applied for missing weather and location data.
    - Precipitation, Wind Speed, and Humidity filled with median values.
 ✔ **Feature Engineering**:
-   - Created **‘Accident Hotspot Score’** based on high-frequency accident locations.
+   - Created **‘Accident Hotspot Score’** based on accident frequency.
    - Derived **‘Time of Day Segmentation’** (Morning, Afternoon, Evening, Night).
-   - Added **binary flags** for adverse weather conditions.
-✔ **Dimensionality Reduction**:
-   - **Principal Component Analysis (PCA)** applied for optimization.
 ✔ **Class Imbalance Handling**:
-   - **Synthetic Minority Over-sampling Technique (SMOTE)** used to balance severity levels.
+   - **SMOTE (Synthetic Minority Over-sampling Technique)** used to balance severity classes.
+✔ **Dimensionality Reduction**:
+   - **Principal Component Analysis (PCA)** applied to optimize feature selection.
 
 ---
 
 ## 🔹 Exploratory Data Analysis (EDA)
-📌 **Key Findings**:
-- **California (22,702 accidents) has the highest accident frequency**.
-- **Miami (2,410 accidents) has the highest accident density in California**.
-- **High accident rates during peak traffic hours (7-9 AM, 4-6 PM)**.
-- **Weather Factors:**
-  - **Low visibility and heavy precipitation significantly increase severity**.
-  - **Temperature extremes correlate with high accident counts**.
-- **Traffic Signals & Stop Signs:**
-  - Locations **without signals have higher accident severity**.
-- **Urban vs. Rural:**
-  - **Urban areas** show more frequent but lower severity accidents.
-  - **Rural highways** experience fewer but **higher severity accidents**.
+📌 **Key Insights**:
+- **Highest Accident Frequency**: **California (22,702 cases)**
+- **Most Accidents in a City**: **Miami (2,410 cases in CA)**
+- **Peak Accident Hours**: **7-9 AM & 4-6 PM**
+- **High Risk Factors**:
+  - **Low visibility and heavy precipitation significantly increase accident severity.**
+  - **Urban intersections experience frequent but lower severity accidents.**
+  - **High-speed highways tend to have fewer but more severe accidents.**
 
 ---
 
 ## 🔹 Predictive Modeling
-🧠 **Machine Learning & Deep Learning Models Used**:
+🧠 **Machine Learning Models Used**:
 
-### **Classification Models for Accident Severity**
-- **Random Forest** (Best Performing - **92% Accuracy**)
-- **XGBoost**
-- **Logistic Regression**
-- **Support Vector Machines (SVM)**
+### **Accident Severity Classification Models**
+- **Random Forest** (Best Performing - **86% Accuracy**)
+- **Gradient Boosting Machines (GBM)**
+- **Deep Neural Networks (DNNs)**
+- **Convolutional Neural Networks (CNNs)**
+- **Long Short-Term Memory Networks (LSTM)**
 
-### **Clustering Models for High-Risk Areas**
+### **High-Risk Zone Clustering Models**
 - **K-Means**
-- **DBSCAN (Density-Based Spatial Clustering)**
+- **DBSCAN (Density-Based Clustering)**
 
 ### **Time Series Forecasting for Accident Trends**
-- **Prophet (Daily Severity Forecasting by Location)**
-- **LSTM (Long Short-Term Memory Networks for Traffic Flow Prediction)**
+- **Prophet** (Daily severity forecasting by location)
 
-### **Key Model Performance Insights**
-📌 **Random Forest outperformed all models** with:
-- **F1-Score: 0.91, ROC-AUC: 0.95**
-- **Most influential features**: Weather Conditions, Visibility, Time of Day
-
-📌 **Prophet identified seasonal accident trends**:
-- **Summer & Winter months show peak accident severity**.
-- **Weekdays have higher accident frequencies than weekends**.
-
-📌 **K-Means & DBSCAN uncovered accident-prone zones**:
-- **High-risk zones found near major intersections & highways**.
-- **DBSCAN effectively detected dense accident clusters**.
-
----
-
-## 🔹 Model Interpretability
-📌 **Feature Importance Analysis (Random Forest & XGBoost)**
-- **Top Contributing Features to Severity Predictions**:
-  - **Weather Conditions** (Rain, Snow, Fog, Low Visibility)
-  - **Time of Day** (Rush Hours show more severe accidents)
-  - **Road Type** (Highways have the highest severity levels)
-
-📌 **SHAP (SHapley Additive Explanations) Analysis**
-- Provides **human-interpretable explanations** of model predictions.
-- Highlights how features like **traffic signals & weather influence accident severity**.
-
-📌 **LIME (Local Interpretable Model-Agnostic Explanations)**
-- Used to analyze **individual accident case predictions**.
+📌 **Performance Highlights**:
+- **Random Forest achieved the best classification performance**:
+  - **F1-Score: 0.91, ROC-AUC: 0.95**
+  - **Most influential factors**: Weather Conditions, Visibility, Time of Day
+- **K-Means & DBSCAN identified high-risk zones**:
+  - **Clusters of high accident severity in major intersections and highways.**
 
 ---
 
@@ -133,25 +125,35 @@ Traffic accidents are a major global concern, causing approximately **1.35 milli
 🏆 **Final Model Performance Summary**
 | Model | Accuracy | F1-Score | ROC-AUC |
 |--------|---------|---------|---------|
-| **Random Forest** | **92%** | **0.91** | **0.95** |
-| XGBoost | 88% | 0.87 | 0.91 |
-| SVM | 85% | 0.84 | 0.89 |
-| Logistic Regression | 81% | 0.79 | 0.84 |
+| **Random Forest** | **86%** | **0.91** | **0.95** |
+| Gradient Boosting | 83% | 0.88 | 0.91 |
+| DNN | 81% | 0.85 | 0.88 |
 
 📌 **Key Takeaways**:
-- **Accident severity is highly correlated with visibility and weather conditions**.
-- **Urban intersections are more prone to frequent but lower severity accidents**.
-- **Highway accidents tend to be more severe** due to high-speed collisions.
-- **Machine learning models effectively identify high-risk factors and locations**.
+- **Weather and traffic conditions have a direct correlation with accident severity.**
+- **Machine learning models effectively predict severity and detect high-risk zones.**
+- **Prophet's time-series forecasting provides real-time accident trend analysis.**
+
+---
+
+## 🔹 Model Interpretability
+📌 **Feature Importance Analysis**
+- **Top Contributing Factors to Severity Predictions**:
+  - **Weather Conditions** (Rain, Snow, Fog, Low Visibility)
+  - **Time of Day** (Rush Hours show more severe accidents)
+  - **Road Type** (Highways have the highest severity levels)
+
+📌 **SHAP & LIME for Explainability**
+- SHAP values highlight how **individual factors contribute to accident severity.**
+- LIME explains **how the models make predictions for specific cases.**
 
 ---
 
 ## 🔹 Conclusion & Future Work
 🚀 **Next Steps for RoadSense**:
 ✅ **Integrate real-time traffic & weather data** for dynamic risk analysis.
-✅ **Enhance deep learning models (CNNs, Autoencoders) for improved predictions**.
-✅ **Develop a web-based interactive dashboard for traffic authorities**.
-✅ **Collaborate with municipalities to implement data-driven road safety measures**.
+✅ **Enhance deep learning models (CNNs, Autoencoders) for improved predictions.**
+✅ **Develop an interactive dashboard for policymakers.**
 
 ---
 
@@ -161,4 +163,4 @@ Traffic accidents are a major global concern, causing approximately **1.35 milli
 🌐 [LinkedIn](https://www.linkedin.com/in/pranav-harish-sharma/)  
 🔗 **Project Repository**: [GitHub Link](https://github.com/user/RoadSense)
 
-💬 *"Errors using inadequate data are much less than those using no data at all." - Charles Babbage"* 🚗💨
+📢 *"Leveraging AI to Make Roads Safer!"* 🚗💨
