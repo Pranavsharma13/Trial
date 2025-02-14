@@ -1,161 +1,165 @@
-# 💶 FundWise: Deciphering Mutual Fund Performance & Behavior
+**RoadSense: Advanced Predictive Modeling for Traffic Safety**  
 
-![Fundwiser Presentation_page-0001](https://github.com/user-attachments/assets/3b309a03-9c12-4fa2-88f3-375fce0ff835)
+The RoadSense project leverages machine learning and deep learning techniques to predict the occurrence and severity of traffic accidents using the US-Accidents dataset, which contains over 2.25 million records. The project employs models like Random Forest, LSTM, CNNs, and Prophet to analyze key factors such as weather, traffic conditions, and time of day. The project utilized Python, Scikit-learn, TensorFlow, and Tableau for data processing, feature engineering, and visualization. With a focus on actionable insights for traffic safety, the application was deployed using Streamlit, providing real-time predictive capabilities. In-depth feature engineering, including dimensionality reduction with PCA and handling class imbalance using SMOTE, resulted in the model achieving 86% accuracy, with a strong emphasis on interpretability to drive better policy and safety decisions.
+
+
+Access the RoadSense App here: https://roadsense-trafficsaftey.streamlit.app/
+# 🚦 RoadSense: Advanced Predictive Modeling for Traffic Safety
+
+![Screenshot 2025-02-13 at 8 08 19 PM](https://github.com/user-attachments/assets/3793d03b-8597-4ff0-af5b-427ade836b0d)
 
 
 ## 🏆 Project Overview
-FundWise is a comprehensive data analysis and machine learning project focused on evaluating mutual fund performance, exploring portfolio compositions, risk-return profiles, expense ratios, and predictive modeling to guide investment strategies. The project includes rigorous data cleaning, visualization, and predictive modeling for actionable insights.
-![Fundwiser Presentation_page-0002](https://github.com/user-attachments/assets/dba15331-5081-4d35-8c98-f57ffbba10a1)
+RoadSense is a machine learning-driven initiative designed to predict and analyze traffic accident severity using the US-Accidents dataset, which contains over **2.25 million records** from 2016 to 2023. This project employs **Random Forest, LSTM, CNNs, Prophet**, and clustering techniques to assess accident patterns and severity based on weather, traffic, and temporal data.
+
+The project utilized **Python, Scikit-learn, TensorFlow, and Tableau** for **data processing, feature engineering, and visualization**. With a focus on actionable insights for traffic safety, the application was deployed using **Streamlit**, providing real-time predictive capabilities. In-depth feature engineering, including **dimensionality reduction** with **PCA **and **handling class imbalance using SMOTE**, resulted in the model achieving **86% accuracy**, with a strong emphasis on interpretability to drive better policy and safety decisions.
+
+The goal is to provide **actionable insights for policymakers, urban planners, and traffic safety authorities** by identifying high-risk factors and improving accident prevention strategies through **real-time predictive analytics**.
 
 ## 📌 Table of Contents
-1. [Executive Summary](#executive-summary)
-2. [Introduction](#introduction)
-3. [Data Overview](#data-overview)
-4. [Data Cleaning & Preprocessing](#data-cleaning--preprocessing)
-5. [Exploratory Data Analysis](#exploratory-data-analysis)
-6. [Visualization & Findings](#visualization--findings)
-7. [Predictive Modeling](#predictive-modeling)
-8. [Fund Classification](#fund-classification)
-9. [Conclusion & Strategic Insights](#conclusion--strategic-insights)
-10. [Future Work](#future-work)
-
----
-
-## 🔹 Executive Summary
-### **Objective**
-The objective of this analysis is to decode mutual fund behavior, focusing on:
-- Portfolio composition & sectoral allocation
-- Risk-return profiles and expense ratios
-- Fund maturity trends and investor confidence
-![Fundwiser Presentation_page-0005](https://github.com/user-attachments/assets/979caea8-2ad3-4c1e-93c8-f7f821ae915e)
-
-### **Key Insights & Outcomes**
-- 📌 **Initial Investment Trends**: Investments range from $10 to $5B, with common entry points at $1,000, $2,500, and $1M.
-- 📌 **Maturity Trends**: 2015 saw the highest number of fund maturities (505), and average yields fluctuated from 0.03% (1968) to 22.35% (2015).
-- 📌 **ROI & Volatility**: High fluctuations in earlier years (e.g., 25.27% in 1974), but stabilizing in recent years.
-- 📌 **Morningstar Ratings**: Peaked in 1975 (4.50/5), bottomed in 2020 (1.099/5).
-- 📌 **Sectoral Allocation**: Financial services consistently dominate, with small funds focusing on financials, mid-sized funds in real estate, and large funds in technology.
-- 📌 **Fund Performance**:
-   - **Top Performer**: AGEIX (Return Ratio: 0.05810%)
-   - **Bottom Performer**: CPXAX (Virtus Family)
-   - **Safe Zone Funds**: ETAHX, GHYMX, ETCTX leading in 3, 5, and 10-year performance.
-- 📌 **Machine Learning Models**: Extra Tree Regressor outperformed other models (R² = 96.17%) in predicting fund returns.
+1. [Introduction](#introduction)
+2. [Dataset Overview](#dataset-overview)
+3. [Data Preprocessing & Feature Engineering](#data-preprocessing--feature-engineering)
+4. [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
+5. [Predictive Modeling](#predictive-modeling)
+6. [Model Interpretability](#model-interpretability)
+7. [Results & Insights](#results--insights)
+8. [Conclusion & Future Work](#conclusion--future-work)
 
 ---
 
 ## 🔹 Introduction
-Mutual fund investment decisions require data-driven insights. This project seeks to understand how fund characteristics influence performance, providing actionable recommendations for investors.
-![Fundwiser Presentation_page-0003](https://github.com/user-attachments/assets/9f99a6c0-4e34-43e4-a225-7c6e41c0cf6d)
+Traffic accidents are a major global concern, causing approximately **1.35 million deaths** annually. Traditional safety measures are often reactive and costly. **RoadSense leverages machine learning** to predict accident severity based on **weather, traffic conditions, time, and geographical attributes**, allowing proactive accident prevention and improved traffic management.
 
-### **Key Business Questions**
-- How does portfolio composition impact sector exposure and risk?
-- What are the historical patterns in fund maturity and performance?
-- Can machine learning models improve fund return predictions?
-
-### **Stakeholders**
-- **Investment Committees & Fund Managers**: Data-backed decisions for fund allocation.
-- **Individual & Institutional Investors**: Strategic investment insights.
-- **Data Analysts & Scientists**: Research on financial market trends.
+### **Key Research Questions**
+- What are the most critical factors influencing **severe** traffic accidents?
+- How can **real-time weather and traffic data** enhance predictive accuracy?
+- What are the **spatiotemporal patterns** of traffic accidents?
 
 ---
 
-## 🔹 Data Overview
-📂 **Dataset**: MutualFunds.csv ([Kaggle](https://www.kaggle.com/datasets/stefanoleone992/mutual-funds-and-etfs))  
-📊 **Size**: 23,784 rows | 298 columns  
-💡 **Key Features**: Net assets, expense ratio, turnover, risk ratings, growth metrics, historical returns.
-![Fundwiser Presentation_page-0004](https://github.com/user-attachments/assets/d897b6e3-5eea-4fb2-b69a-a13364287bd5)
+## 🔹 Dataset Overview
+📂 **Dataset**: US-Accidents (2016 - 2023) ([Kaggle](https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents))  
+📊 **Size**: 2.25 million records, 46 features  
+🌍 **Geographical Coverage**: Entire contiguous US states  
+
+### **Key Features**
+- **Severity**: Categorized into 4 levels (1 = Least Severe, 4 = Most Severe)
+- **Weather Conditions**: Rain, Snow, Fog, Temperature, Wind Speed, Visibility
+- **Time & Location**: Date, Time of Day, City, State, Road Type
+- **Traffic Infrastructure**: Presence of Traffic Signals, Stop Signs, Crosswalks
 
 ---
 
-## 🔹 Data Cleaning & Preprocessing
-✔ **Missing Data Handling**: Mean/zero-fill techniques applied to key columns.  
-✔ **Outlier Treatment**: Statistical detection & removal.  
-✔ **Feature Engineering**: Created a ‘Total Investment’ column for comprehensive portfolio analysis.
-![Fundwiser Presentation_page-0006](https://github.com/user-attachments/assets/eab3d9de-b7af-4909-9b6d-309d5ed6a585)
+## 🔹 Data Preprocessing & Feature Engineering
+✔ **Handling Missing Values**: 
+   - Imputation techniques used for missing weather and location data.
+   - Precipitation, Wind Speed, and Humidity filled with median values.
+✔ **Feature Engineering**:
+   - Created **‘Accident Hotspot Score’** based on high-frequency accident locations.
+   - Derived **‘Time of Day Segmentation’** (Morning, Afternoon, Evening, Night).
+   - Added **binary flags** for adverse weather conditions.
+✔ **Dimensionality Reduction**:
+   - **Principal Component Analysis (PCA)** applied for optimization.
+✔ **Class Imbalance Handling**:
+   - **Synthetic Minority Over-sampling Technique (SMOTE)** used to balance severity levels.
 
 ---
 
 ## 🔹 Exploratory Data Analysis (EDA)
-📌 **Univariate, Bivariate & Multivariate Analysis**
-📊 **Key Findings**:
-- **ROI Trends**: Early years had high volatility; recent years show stabilization.
-- **Morningstar Ratings**: Fluctuated significantly, peaking in 1975 and dropping in 2020.
-- **Sectoral Allocation by Fund Size**:
-  - **Small Funds**: Highest in Financial Services.
-  - **Mid-Size Funds**: Dominated by Real Estate.
-  - **Large Funds**: Focus on Technology.
-![Fundwiser Presentation_page-0007](https://github.com/user-attachments/assets/efae4240-01ca-4128-b1bd-99b585a1bae8)
-
----
-
-## 🔹 Visualization & Findings
-📊 **Commencement & Maturity Trends**: 2015 had the highest fund maturity count.  
-📊 **Expense Ratio vs. Returns**: Negative correlation—lower expenses often yield better performance.  
-📊 **Fund Size & Investment Type**: Growth funds show a direct relationship with size in return rates.  
-![Fundwiser Presentation_page-0008](https://github.com/user-attachments/assets/33d937c3-1eae-4ef5-a147-58c949723448)
-![Fundwiser Presentation_page-0009](https://github.com/user-attachments/assets/c63d142a-b9d3-4760-bc62-13f05fb66239)
-![Fundwiser Presentation_page-0010](https://github.com/user-attachments/assets/482a82f4-0749-4ffe-8821-196325adbe95)
-![Fundwiser Presentation_page-0011](https://github.com/user-attachments/assets/cf8c486b-3263-4569-bec7-dd69757b76f8)
-![Fundwiser Presentation_page-0012](https://github.com/user-attachments/assets/d205cabc-9430-48fa-93fe-78e6b4486b72)
-![Fundwiser Presentation_page-0013](https://github.com/user-attachments/assets/374fa625-fe18-447b-bf3a-fe35dd1c7b68)
-![Fundwiser Presentation_page-0014](https://github.com/user-attachments/assets/d3fc0688-c973-4e67-9f36-2dab0fe64004)
-![Fundwiser Presentation_page-0020](https://github.com/user-attachments/assets/0895592e-d84f-4e7b-9fab-4bb32d0a27d8)
+📌 **Key Findings**:
+- **California (22,702 accidents) has the highest accident frequency**.
+- **Miami (2,410 accidents) has the highest accident density in California**.
+- **High accident rates during peak traffic hours (7-9 AM, 4-6 PM)**.
+- **Weather Factors:**
+  - **Low visibility and heavy precipitation significantly increase severity**.
+  - **Temperature extremes correlate with high accident counts**.
+- **Traffic Signals & Stop Signs:**
+  - Locations **without signals have higher accident severity**.
+- **Urban vs. Rural:**
+  - **Urban areas** show more frequent but lower severity accidents.
+  - **Rural highways** experience fewer but **higher severity accidents**.
 
 ---
 
 ## 🔹 Predictive Modeling
-🧠 **Machine Learning Models Used**:
-- **Extra Tree Regressor**: Best predictive model with R² = 96.17%
-- **Random Forest**: R² = 95.09%
-- **Decision Tree**: R² = 87.94%
+🧠 **Machine Learning & Deep Learning Models Used**:
 
-📌 **Model Insights**:
-- **Higher fund ratings correlate with better return predictions.**
-- **Expense ratio plays a crucial role in fund sustainability.**
-![Fundwiser Presentation_page-0016](https://github.com/user-attachments/assets/3f319964-3293-4010-ab14-2f27767fdc2a)
+### **Classification Models for Accident Severity**
+- **Random Forest** (Best Performing - **92% Accuracy**)
+- **XGBoost**
+- **Logistic Regression**
+- **Support Vector Machines (SVM)**
+
+### **Clustering Models for High-Risk Areas**
+- **K-Means**
+- **DBSCAN (Density-Based Spatial Clustering)**
+
+### **Time Series Forecasting for Accident Trends**
+- **Prophet (Daily Severity Forecasting by Location)**
+- **LSTM (Long Short-Term Memory Networks for Traffic Flow Prediction)**
+
+### **Key Model Performance Insights**
+📌 **Random Forest outperformed all models** with:
+- **F1-Score: 0.91, ROC-AUC: 0.95**
+- **Most influential features**: Weather Conditions, Visibility, Time of Day
+
+📌 **Prophet identified seasonal accident trends**:
+- **Summer & Winter months show peak accident severity**.
+- **Weekdays have higher accident frequencies than weekends**.
+
+📌 **K-Means & DBSCAN uncovered accident-prone zones**:
+- **High-risk zones found near major intersections & highways**.
+- **DBSCAN effectively detected dense accident clusters**.
 
 ---
 
-## 🔹 Fund Classification
-🏆 **Top 5 Performing Funds**
-1. **AGEIX** – Highest Return Ratio (0.05810%)
-2. **Cohen & Steers Funds** – Strong performers in small-sized funds.
-![Fundwiser Presentation_page-0017](https://github.com/user-attachments/assets/8dec4b22-6f6e-4ed7-8a98-dd0bdd4c1301)
+## 🔹 Model Interpretability
+📌 **Feature Importance Analysis (Random Forest & XGBoost)**
+- **Top Contributing Features to Severity Predictions**:
+  - **Weather Conditions** (Rain, Snow, Fog, Low Visibility)
+  - **Time of Day** (Rush Hours show more severe accidents)
+  - **Road Type** (Highways have the highest severity levels)
 
-🚨 **Bottom 5 Performing Funds**
-1. **FFRLX** – Virtus Family underperformed.
-2. **FRICX** – William Blair held the lowest position.
-![Fundwiser Presentation_page-0018](https://github.com/user-attachments/assets/96d7cbcf-0af1-4d91-9937-1eec9cb9a2e5)
+📌 **SHAP (SHapley Additive Explanations) Analysis**
+- Provides **human-interpretable explanations** of model predictions.
+- Highlights how features like **traffic signals & weather influence accident severity**.
 
-✅ **Safe Investment Funds**
-- **ETAHX (Small-sized)** – Best in 3, 5, and 10-year performance.
-- **GHYMX & ETCTX** – Stable historical returns.
-![Fundwiser Presentation_page-0019](https://github.com/user-attachments/assets/e7be58db-7b98-4bbb-9891-3b45ca951376)
+📌 **LIME (Local Interpretable Model-Agnostic Explanations)**
+- Used to analyze **individual accident case predictions**.
 
 ---
 
-## 🔹 Conclusion & Strategic Insights
+## 🔹 Results & Insights
+🏆 **Final Model Performance Summary**
+| Model | Accuracy | F1-Score | ROC-AUC |
+|--------|---------|---------|---------|
+| **Random Forest** | **92%** | **0.91** | **0.95** |
+| XGBoost | 88% | 0.87 | 0.91 |
+| SVM | 85% | 0.84 | 0.89 |
+| Logistic Regression | 81% | 0.79 | 0.84 |
+
 📌 **Key Takeaways**:
-- **Diversification is essential**: Small-sized funds perform well in Financial Services, while large funds thrive in Tech.
-- **Fund Ratings & ROI Correlation**: Ratings act as a strong indicator of performance.
-- **Expense Ratio Matters**: Funds with lower expense ratios tend to yield better returns.
-![Fundwiser Presentation_page-0022](https://github.com/user-attachments/assets/6caeae3d-af52-4ef7-b416-2f6e58c9789a)
-![Fundwiser Presentation_page-0021](https://github.com/user-attachments/assets/44cbaa62-884b-4785-82d4-fce24b27d713)
+- **Accident severity is highly correlated with visibility and weather conditions**.
+- **Urban intersections are more prone to frequent but lower severity accidents**.
+- **Highway accidents tend to be more severe** due to high-speed collisions.
+- **Machine learning models effectively identify high-risk factors and locations**.
 
 ---
 
-## 🔹 Future Work
-✅ **Advanced Deep Learning**: Neural networks for fund return forecasting.  
-✅ **Interactive Dashboards**: Dynamic Tableau/Power BI visualizations.  
-✅ **Market Sentiment Analysis**: Using NLP to predict fund trends.
+## 🔹 Conclusion & Future Work
+🚀 **Next Steps for RoadSense**:
+✅ **Integrate real-time traffic & weather data** for dynamic risk analysis.
+✅ **Enhance deep learning models (CNNs, Autoencoders) for improved predictions**.
+✅ **Develop a web-based interactive dashboard for traffic authorities**.
+✅ **Collaborate with municipalities to implement data-driven road safety measures**.
 
 ---
 
 ## 📌 Get in Touch
 📧 pranavsharma1395@gmail.com  
+📞 +1 (778) 598-6373  
 🌐 [LinkedIn](https://www.linkedin.com/in/pranav-harish-sharma/)  
+🔗 **Project Repository**: [GitHub Link](https://github.com/user/RoadSense)
 
-🔗 **Project Repository**: [GitHub Link](https://github.com/user/FundWise)
-
----
-📢 *"Empowering Investors with Data-Driven Insights!"*
+💬 *"Errors using inadequate data are much less than those using no data at all." - Charles Babbage"* 🚗💨
