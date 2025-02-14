@@ -4,10 +4,6 @@ The RoadSense project leverages machine learning and deep learning techniques to
 
 
 # 🚦 RoadSense: Advanced Predictive Modeling for Traffic Safety
-Access the RoadSense App here: https://roadsense-trafficsaftey.streamlit.app/
-![Screenshot 2025-02-13 at 8 10 36 PM](https://github.com/user-attachments/assets/76121b2f-6d29-45a8-bb9d-0b6be029584c)
-
-# 🚦 RoadSense: Advanced Predictive Modeling for Traffic Safety
 
 ![RoadSense Banner](https://github.com/user-attachments/assets/roadsense-banner)
 
@@ -36,6 +32,59 @@ The project employs **Random Forest, K-Means, DBSCAN, Prophet, and Long Short-Te
 
 ---
 
+## 🔹 Introduction
+### **Context & Significance**
+Traffic accidents pose a significant **socioeconomic burden**, with **over 1.35 million deaths annually** worldwide. Conventional accident prevention measures are often **reactive**, requiring a shift toward **proactive, data-driven approaches**.
+
+---
+
+## 🔹 Problem Statement
+The project aims to address the following key questions:
+✔ **What factors contribute most to severe traffic accidents?**
+✔ **How can real-time weather and traffic data improve accident severity predictions?**
+✔ **What are the spatial and temporal patterns of traffic accidents?**
+✔ **How can predictive models aid policymakers in designing better road safety measures?**
+
+---
+
+## 🔹 Project Goals & Objectives
+### **Key Objectives**
+✔ **Develop robust machine learning models** to predict accident severity.
+✔ **Identify key risk factors** (weather conditions, traffic signals, time of day, etc.).
+✔ **Analyze high-risk accident zones** using clustering techniques.
+✔ **Forecast accident trends** for proactive traffic safety interventions.
+✔ **Ensure model interpretability** for policymakers and urban planners.
+
+---
+
+## 🔹 Dataset Overview
+📂 **Dataset**: US-Accidents (2016 - 2023) ([Kaggle](https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents))  
+📊 **Size**: 2.25 million records | 46 features  
+🌍 **Geographical Coverage**: Entire contiguous US states  
+
+### **Key Features**
+- **Severity**: 1 (least severe) to 4 (most severe)
+- **Weather Conditions**: Rain, Snow, Fog, Temperature, Wind Speed, Visibility
+- **Traffic Infrastructure**: Traffic Signals, Stop Signs, Crosswalks
+- **Location & Time**: Date, Time of Day, City, State, Road Type
+
+---
+
+## 🔹 Data Preprocessing & Feature Engineering
+✔ **Handling Missing Values**:
+   - Imputed missing values for weather and location data.
+   - Precipitation, Wind Speed, and Humidity filled with median values.
+✔ **Feature Engineering**:
+   - Extracted **Start_Hour, Start_Minute, Start_Second** from Start_Time.
+   - **Encoded categorical variables** (e.g., Weather_Condition) using Label Encoding.
+✔ **Dimensionality Reduction**:
+   - **Principal Component Analysis (PCA)** retained six principal components.
+✔ **Class Imbalance Handling**:
+   - Applied **SMOTE** (Synthetic Minority Oversampling) to balance severity classes.
+✔ **Dataset Splitting:** 80-20 train-test split.
+
+---
+
 ## 🔹 Results & Insights
 ### **4.1 Results Overview**
 This section summarizes the performance of the various machine learning models developed to predict traffic accident severity, cluster accident patterns, and forecast daily severity based on historical data.
@@ -45,22 +94,10 @@ This section summarizes the performance of the various machine learning models d
 |--------|---------|-------------------------|--------------------------------------------------|--------------------------------------------------|
 | **Random Forest** | Classification | - Accuracy: **86%**  | - Strong performance for **Classes 1 and 4** | - Difficulty distinguishing between **Classes 2 and 3** |
 |  |  | - Precision: Highest for **Class 1 and 4 (91%)** | - High recall for **Class 1 (99%)** | - Overlapping feature patterns affecting prediction accuracy |
-|  |  | - F1-Score: High for **Class 1 and 4** | - Performs well in predicting **low and high severity accidents** |  |
 | **K-Means Clustering** | Clustering | - Silhouette Score: **0.65** | - Well-defined and **separated clusters** | - Sensitive to **initial centroid selection** |
-|  |  |  | - Effective in identifying general clusters | - Struggles with **non-globular clusters** |
 | **DBSCAN Clustering** | Clustering | - No fixed metric due to algorithm nature | - Identifies clusters with **varying densities** | - Performance depends on **eps and min_samples** |
-|  |  |  | - Captures **outliers and core points** effectively |  |
 | **Prophet** | Time Series Forecasting | - Accuracy: Strong **alignment of actual vs. predicted** | - Captures **temporal patterns and trends** | - Depends on **data quality and availability** |
-|  |  |  | - Provides insights into **seasonal patterns** | - Choice of **regressors impacts accuracy** |
 | **LSTM** | Time Series Analysis | - **MAE: 0.31** | - Accurate predictions of **traffic patterns** | - Requires **significant data preprocessing** |
-|  |  | - Loss: **Decreased over 100 epochs** | - Effective in **learning complex temporal dependencies** | - Sensitive to **hyperparameters and model architecture** |
-
-📌 **Key Takeaways:**
-- **Random Forest performed best for classification**, accurately predicting accident severity with **86% accuracy**.
-- **K-Means successfully identified general accident zones**, but struggled with **non-globular clusters**.
-- **DBSCAN effectively detected accident hotspots**, particularly in **dense urban areas**.
-- **Prophet forecasted seasonal accident patterns**, aiding in long-term **traffic safety planning**.
-- **LSTM demonstrated strong predictive capabilities**, particularly in understanding **traffic flow trends** over time.
 
 ---
 
