@@ -5,8 +5,8 @@ The RoadSense project leverages machine learning and deep learning techniques to
 
 Access the RoadSense App here: https://roadsense-trafficsaftey.streamlit.app/
 # 🚦 RoadSense: Advanced Predictive Modeling for Traffic Safety
+![RoadSense](https://github.com/user-attachments/assets/952b73ab-8131-4ec5-a7c4-b27bdc6eb5c7)
 
-![Screenshot 2025-02-13 at 8 08 19 PM](https://github.com/user-attachments/assets/3793d03b-8597-4ff0-af5b-427ade836b0d)
 
 
 ## 🏆 Project Overview
