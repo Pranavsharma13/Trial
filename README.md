@@ -164,8 +164,8 @@ print("Recommended Product Colors:", recommendations)
 ```
 📌 **Visualization of Recommendations:**
 
-![ProjectPPT - Updated Reco_page-0001](https://github.com/user-attachments/assets/55e9ba90-221d-4066-aee0-c69b958c069a)
-![ProjectPPT - Updated Reco_page-0002](https://github.com/user-attachments/assets/e8d8f66a-d571-469d-9bf1-754ce6e5a14a)
+![ProjectPPT - Updated Reco_page-0001](https://github.com/user-attachments/assets/90aab7e2-a448-4d53-bb20-a8e61a6fa5ee)
+![ProjectPPT - Updated Reco_page-0002](https://github.com/user-attachments/assets/120d7df1-596a-4636-a1f1-377e54ae3d00)
 
 
 ---
