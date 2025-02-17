@@ -163,8 +163,9 @@ recommendations = lgb_model.predict(preprocessor.transform(new_data_point))
 print("Recommended Product Colors:", recommendations)
 ```
 📌 **Visualization of Recommendations:**
-![Recommendation Output](https://github.com/user-attachments/assets/shopperlens-recommendations)
-# Add Branch 1,2,3 recommendations here 
+![ProjectPPT - Updated Reco_page-0027](https://github.com/user-attachments/assets/dfd1a872-0595-4fb0-9842-4728586bc3e5)
+![ProjectPPT - Updated Reco_page-0028](https://github.com/user-attachments/assets/f0516358-436b-4924-a66c-bfe1847f39ae)
+
 
 ---
 
