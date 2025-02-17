@@ -194,10 +194,10 @@ The results indicate that **LightGBM provides the highest accuracy**, making it 
 ---
 
 ## 📚 References
-📖 [LightGBM Documentation](https://lightgbm.readthedocs.io/)  
-📖 [Surprise Library for Collaborative Filtering](https://surpriselib.com/)  
-📖 [Scikit-Learn Documentation](https://scikit-learn.org/)  
-📖 [Dataset (UC Irvine Machine Learning Repository)](https://archive.ics.uci.edu/dataset/553/clickstream+data+for+online+shopping)  
+- 📖 [LightGBM Documentation](https://lightgbm.readthedocs.io/)
+- 📖 [Surprise Library for Collaborative Filtering](https://surpriselib.com/)
+- 📖 [Scikit-Learn Documentation](https://scikit-learn.org/)
+- 📖 [Dataset (UC Irvine Machine Learning Repository)](https://archive.ics.uci.edu/dataset/553/clickstream+data+for+online+shopping)  
 ---
 
 ## 📌 Get in Touch
