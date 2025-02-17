@@ -50,7 +50,8 @@ ShopperLens tackles these issues by employing a **multi-model recommendation sys
 ---
 
 ## 📊 Dataset Overview
-The dataset used is **E-Shop Clothing 2008**, consisting of **shopping behavior data collected from an online retail store**. ([UC Irvine Machine Learning Repository](https://archive.ics.uci.edu/dataset/553/clickstream+data+for+online+shopping)).
+The dataset used is **E-Shop Clothing 2008**, consisting of **shopping behavior data collected from an online retail store**. 
+([UC Irvine Machine Learning Repository](https://archive.ics.uci.edu/dataset/553/clickstream+data+for+online+shopping)).
 It includes:
 ✔ **User Sessions** – Tracks clicks, views, and purchase interactions.  
 ✔ **Product Attributes** – Details such as color, category, price, metadata.  
@@ -84,6 +85,43 @@ Before training the models, we conducted **EDA to understand data distributions,
 ![EDA Visualization](https://github.com/user-attachments/assets/shopperlens-eda)
 
 ---
+## 🛠 Model Architecture
+ShopperLens follows a **multi-branch modeling approach**, consisting of:
+- 1️⃣ **Memory-Based Model (LightGBM)** – Analyzes session attributes.
+- 2️⃣ **Collaborative Filtering (SVD + LightGBM)** – Learns user-item interaction patterns.
+- 3️⃣ **Item-Based Filtering (KNN)** – Recommends similar products using cosine similarity.
+
+📌 **Overall System Flowchart**  
+![Overall Model Flow](https://github.com/user-attachments/assets/shopperlens-overall-flowchart)
+
+### **Branch 1: Memory-Based Learning (LightGBM)**
+- **Objective:** Predict user preferences based on session attributes.
+- **Hyperparameters:** `max_depth=3, n_estimators=4, learning_rate=0.06`
+- **Result:** Achieved **80% accuracy** and **AUC score of 0.98**.
+- **Use Case:** Works well for users with clear session behavior.
+
+📌 **Flowchart:**  
+![Memory-Based Flowchart](https://github.com/user-attachments/assets/shopperlens-memory-based)
+
+### **Branch 2: Collaborative Filtering (SVD + LightGBM)**
+- **Objective:** Learn user-item relationships for recommendations.
+- **Hyperparameters:** `SVD + LightGBM for further refinement`
+- **Result:** Achieved **75% accuracy** and **AUC score of 0.97**.
+- **Use Case:** Useful for repeat customers with historical data.
+
+📌 **Flowchart:**  
+![Collaborative Filtering Flowchart](https://github.com/user-attachments/assets/shopperlens-collaborative-filtering)
+
+### **Branch 3: Item-Based Filtering (KNN)**
+- **Objective:** Find similar products based on cosine similarity.
+- **Hyperparameters:** `K=10 neighbors`
+- **Result:** Achieved **RMSE = 0.4777, MAE = 0.3880**.
+- **Use Case:** Ideal for similar product suggestions.
+
+📌 **Flowchart:**  
+![Item-Based Flowchart](https://github.com/user-attachments/assets/shopperlens-knn)
+
+---
 
 ## 🧪 Sample Data & Testing
 ShopperLens uses sample test cases to **validate recommendation accuracy**.
@@ -107,16 +145,6 @@ print("Recommended Product Colors:", recommendations)
 📌 **Visualization of Recommendations:**
 ![Recommendation Output](https://github.com/user-attachments/assets/shopperlens-recommendations)
 
----
-
-## 📡 Model Architecture
-The system consists of **three distinct recommendation branches:**
-1️⃣ **Memory-Based Model (LightGBM)** – Analyzes session attributes.  
-2️⃣ **Collaborative Filtering (SVD + LightGBM)** – Learns user-item interaction patterns.  
-3️⃣ **Item-Based Filtering (KNN)** – Recommends similar products using cosine similarity.
-
-📌 **Architecture Diagram:**
-![System Architecture](https://github.com/user-attachments/assets/shopperlens-architecture)
 
 ---
 
