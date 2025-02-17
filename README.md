@@ -1,127 +1,143 @@
-# 🚀 MarketDB: A Hybrid SQL & NoSQL Database for E-Commerce
+# 🚀 ShopperLens: AI-Driven Personalized Recommendation System
 
-![MarketDB Banner](https://github.com/user-attachments/assets/marketdb-banner)
+![ShopperLens Banner](https://github.com/user-attachments/assets/shopperlens-banner)
 
-## 🏆 Project Overview
-MarketDB is a **hybrid database solution** integrating **SQL (MySQL)** for structured data and **NoSQL (MongoDB)** for high-performance, flexible storage. This system provides **optimized data retrieval, transaction processing, and analytics** for an **online marketplace**, enabling seamless interactions between buyers, sellers, and administrators.
+## 📌 Project Overview
+ShopperLens is a **multi-model recommendation system** designed to predict and personalize product recommendations for e-commerce users based on **session data, user interactions, and product attributes**. This project implements **three distinct recommendation approaches** to optimize relevance and engagement.
 
-🔹 **MySQL** handles relational data like Users, Orders, Payments, and Shipping.  
-🔹 **MongoDB** stores unstructured data like Product Metadata, User Reviews, and Analytics.  
-🔹 **Python-powered APIs** ensure efficient database communication and reporting.  
-🔹 **Advanced indexing and query optimization** improve data retrieval performance.  
-🔹 **ACID compliance in SQL** and **CAP theorem considerations in NoSQL** ensure data consistency and availability.  
- 
-🔹 **Sharding, Replication, and Load Balancing** ensure fault tolerance and scalability.  
+### 🔥 **Key Features**
+✅ **Memory-Based Model (LightGBM)** – Analyzes session-based data for color prediction.  
+✅ **Collaborative Filtering (SVD + LightGBM)** – Learns hidden patterns from user-item interactions.  
+✅ **Item-Based Filtering (KNN)** – Recommends similar products using cosine similarity.
+
+### 🏗 **System Architecture**
+ShopperLens follows a **multi-branch architecture** with independent pipelines for each recommendation strategy:
+
+![System Architecture](https://github.com/user-attachments/assets/shopperlens-architecture)
 
 ---
 
 ## 📌 Table of Contents
-1. [📖 Introduction](#-introduction)
-2. [🔍 Problem Statement](#-problem-statement)
-3. [🎯 Project Goals & Objectives](#-project-goals--objectives)
-4. [🛠 Database Design](#-database-design)
-   - [📂 Conceptual Model](#-conceptual-model)
-   - [📊 Relational Model (MySQL)](#-relational-model-mysql)
-   - [📜 NoSQL Document Model (MongoDB)](#-nosql-document-model-mongodb)
-5. [💾 Implementation in MySQL](#-implementation-in-mysql)
-
-   - [📝 Schema & Table Structure](#-schema--table-structure)
-   - [📑 Data Insertion & Queries](#-data-insertion--queries)
-   - [⚙️ Python Application for SQL Access](#-python-application-for-sql-access)
-6. [📦 Implementation in MongoDB](#-implementation-in-mongodb)
-   - [📄 Collection Design & Data Insertion](#-collection-design--data-insertion)
-   - [🔍 NoSQL Queries & Aggregations](#-nosql-queries--aggregations)
-   - [🛠 Python Application for NoSQL Access](#-python-application-for-nosql-access)
-7. [📊 Performance Optimization & Query Tuning](#-performance-optimization--query-tuning)
-8. [🔐 Security & Compliance](#-security--compliance)
-9. [📡 Scalability & Distributed Systems](#-scalability--distributed-systems)
-10. [📊 Insights & Analytics](#-insights--analytics)
-11. [🚀 Future Enhancements](#-future-enhancements)
-12. [📚 References](#-references)
+1. [🔍 Problem Statement](#-problem-statement)
+2. [📊 Dataset Details](#-dataset-details)
+3. [🛠 Data Preprocessing](#-data-preprocessing)
+4. [🧠 Recommendation Models](#-recommendation-models)
+   - [Branch 1: Memory-Based Model (LightGBM)](#branch-1-memory-based-model-lightgbm)
+   - [Branch 2: Collaborative Filtering (SVD + LightGBM)](#branch-2-collaborative-filtering-svd--lightgbm)
+   - [Branch 3: Item-Based Filtering (KNN)](#branch-3-item-based-filtering-knn)
+5. [📌 Results & Insights](#-results--insights)
+6. [🚀 Future Enhancements](#-future-enhancements)
+7. [📚 References](#-references)
 
 ---
 
-## 📖 Introduction
-MarketDB integrates **MySQL for structured transactional data** and **MongoDB for flexible, unstructured content storage** to address scalability, consistency, and efficiency challenges in e-commerce databases.
+## **🔍 Problem Statement**
+E-commerce platforms face challenges in delivering **highly relevant recommendations** due to:
+- **Sparse user-item interaction data** affecting prediction accuracy.
+- **Cold start problem** for new users and products.
+- **Balancing personalization vs. diversity** in suggestions.
+
+ShopperLens tackles these issues using a **multi-approach recommendation system** to improve recommendation accuracy and enhance user engagement.
 
 ---
 
-## 🔍 Problem Statement
-**Challenges in E-Commerce Databases:**
-- 🚀 **Performance bottlenecks** in handling large-scale transactions.
-- ⚡ **Scalability limitations** in traditional relational databases.
-- 🔄 **Data inconsistency** between structured and unstructured data.
-- 🔎 **Slow query performance** with complex joins and filtering.
+## **📊 Dataset Details**
+The dataset used for this project is **E-Shop Clothing 2008**, containing:
+- **User Sessions** – Tracks clicks, views, and purchase interactions.
+- **Product Details** – Includes attributes like color, category, price, metadata.
+- **Transaction Data** – Captures orders, session IDs, and timestamps.
 
-**MarketDB Solution:**
-✔ **SQL for relational data** (Users, Orders, Payments).  
-✔ **NoSQL for flexible content storage** (Reviews, Analytics).  
-✔ **Python-based APIs** for seamless database interactions.  
-✔ **Optimized indexing & query tuning** for high-speed retrieval.  
-✔ **ACID compliance in SQL, CAP theorem adherence in NoSQL**.  
-✔ **Efficient use of normalization and denormalization** where necessary.  
+🔹 **Preprocessing Steps:**
+✅ Handling **missing values** using mean/mode imputation.  
+✅ Encoding **categorical variables** (OneHotEncoder, LabelEncoder).  
+✅ Addressing **class imbalance** using **ADASYN & SMOTE**.  
+✅ **Feature Engineering** – Creating explicit rating bins for Item-Based Filtering.
 
 ---
 
-## 🎯 Project Goals & Objectives
-✅ **Develop a dual-database architecture** integrating SQL & NoSQL.  
-✅ **Design an optimized relational model** for e-commerce operations.  
-✅ **Implement a flexible NoSQL model** for dynamic data storage.  
-✅ **Enable Python-driven database access** for query execution and analysis.  
-✅ **Ensure scalability, efficiency, and security** in transaction processing.  
-✅ **Leverage indexing techniques** to speed up searches and aggregations.  
-✅ **Use data replication and sharding** for enhanced fault tolerance.  
+## **🛠 Data Preprocessing**
+Before training, several preprocessing steps were applied:
+
+1️⃣ **Handling Outliers** – Using **IQR-based filtering** on price values.  
+2️⃣ **Feature Scaling** – Standardizing numerical features with **MinMaxScaler & StandardScaler**.  
+3️⃣ **Encoding Categorical Features** – Transforming textual data into machine-readable format.  
+4️⃣ **Stratified Sampling** – To ensure balanced training data across all classes.  
+5️⃣ **Dimensionality Reduction** – Using **SVD** to optimize collaborative filtering performance.
+
+📌 **Flowchart:**  
+![Data Preprocessing Flowchart](https://github.com/user-attachments/assets/shopperlens-preprocessing)
 
 ---
 
-## 🛠 Database Design
-### 📂 Conceptual Model
-_**(Add ER Diagram Here)**_
+## **🧠 Recommendation Models**
 
-### 📊 Relational Model (MySQL)
-_**(Add Relational Schema Image Here)**_
-✔ **Entities:** Users, Sellers, Buyers, Products, Orders, Payments, Shipping.  
-✔ **Relationships:** Foreign key constraints for referential integrity.  
-✔ **Normalization (1NF, 2NF, 3NF, BCNF)** for eliminating redundancy.  
-✔ **ACID compliance for transactional reliability**.  
+### **Branch 1: Memory-Based Model (LightGBM)**
+📌 **Approach:**
+- Uses **LightGBM** to analyze **session attributes** (color, category, price, etc.).
+- Handles **class imbalance** with **ADASYN oversampling**.
+- Achieves **80% accuracy** and **AUC score of 0.98**.
 
-### 📜 NoSQL Document Model (MongoDB)
-_**(Add NoSQL Schema Image Here)**_
-✔ **Collections:** User Reviews, Product Metadata, Analytics.  
-✔ **Schema-less Design:** Adaptable structure for flexible data storage.  
-✔ **Sharding & Replication:** Ensuring horizontal scalability and fault tolerance.  
-✔ **Aggregation pipeline for real-time analytics**.  
+📌 **Flowchart:**  
+![Branch 1 Flowchart](https://github.com/user-attachments/assets/shopperlens-memory-based)
 
 ---
 
-## 🔐 Security & Compliance
-✔ **Role-Based Access Control (RBAC)** for enforcing security.  
-✔ **SQL Injection Prevention** using parameterized queries.  
-✔ **Data Encryption (AES, RSA, TDE)** for protecting sensitive data.  
-✔ **Audit Logs & Monitoring** for tracking database activities.  
-✔ **Backup & Disaster Recovery Plans** to ensure data availability.  
+### **Branch 2: Collaborative Filtering (SVD + LightGBM)**
+📌 **Approach:**
+- Constructs a **user-item interaction matrix** using purchase history.
+- Applies **SVD for dimensionality reduction** before training LightGBM.
+- Achieves **75% accuracy** and **AUC score of 0.97**.
+
+📌 **Flowchart:**  
+![Branch 2 Flowchart](https://github.com/user-attachments/assets/shopperlens-collaborative-filtering)
 
 ---
 
-## 📊 Insights & Analytics
-✔ **Sales Trend Analysis** using SQL aggregation functions.  
-✔ **User Behavior & Purchase Patterns** from MongoDB analytics.  
-✔ **Seller Performance Dashboards** via Python visualization tools.  
-✔ **Customer Review Sentiment Analysis** for business insights.  
+### **Branch 3: Item-Based Filtering (KNN)**
+📌 **Approach:**
+- Uses **cosine similarity** to recommend similar products.
+- Computes **explicit ratings** by binning prices into quantiles.
+- Optimizes **KNN hyperparameters (k-neighbors)** for accuracy.
+- Achieves **RMSE = 0.4777**, **MAE = 0.3880**.
+
+📌 **Flowchart:**  
+![Branch 3 Flowchart](https://github.com/user-attachments/assets/shopperlens-knn)
 
 ---
 
-## 📚 References
-📖 **MySQL Documentation** ([Read Here](https://dev.mysql.com/doc/))  
-📖 **MongoDB Documentation** ([Read Here](https://docs.mongodb.com/))  
-📖 **Python & Database Connectivity** ([Read Here](https://docs.python.org/3/library/sqlite3.html))  
+## **📌 Results & Insights**
+
+| **Model** | **Accuracy / RMSE** | **AUC Score** | **Strengths** | **Weaknesses** |
+|-----------|-----------------|------------|------------|-------------|
+| LightGBM | **80%** | **0.98** | Handles session data well | Limited interpretability |
+| SVD + LightGBM | **75%** | **0.97** | Good for collaborative filtering | Struggles with sparse data |
+| KNN | **RMSE 0.4777** | N/A | Good for item similarity | Sensitive to K hyperparameter |
+
+📌 **Visualizations:**
+- **ROC Curve for LightGBM**
+- **Precision-Recall Curve for Collaborative Filtering**
+- **Feature Importance Rankings**
 
 ---
 
-## 📌 Get in Touch
-📧 **pranavsharma1395@gmail.com**  
-📞 **+1 (778) 598-6373**  
-🌐 **[LinkedIn](https://www.linkedin.com/in/pranav-harish-sharma/)**  
-🔗 **[GitHub Repository](https://github.com/user/MarketDB)**  
+## **🚀 Future Enhancements**
+🔹 **Hybrid Recommendation Approach** – Combining Memory-Based & Collaborative Filtering.  
+🔹 **Real-Time Personalization** – Deploying a Flask API for dynamic recommendations.  
+🔹 **Feature Engineering** – Integrating user demographics & behavioral analytics.  
 
-🚀 *"Optimizing E-Commerce with Hybrid SQL & NoSQL Databases!"*
+---
+
+## **📚 References**
+📖 LightGBM Documentation  
+📖 Surprise Library for Collaborative Filtering  
+📖 Scikit-Learn Documentation  
+
+---
+
+## **📌 Get in Touch**
+📧 pranavsharma1395@gmail.com  
+📞 +1 (778) 598-6373  
+🔗 [LinkedIn](https://www.linkedin.com/in/pranav-harish-sharma/)  
+🔗 [GitHub](https://github.com/user/ShopperLens)  
+
+🚀 *"Optimizing E-Commerce with AI-Powered Personalized Recommendations!"*
