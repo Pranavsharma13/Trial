@@ -56,6 +56,11 @@ It includes:
 - ✔ **Product Attributes** – Details such as color, category, price, metadata.
 - ✔ **Transaction History** – Captures orders, session IDs, and timestamps.  
 
+📌 **Variable Descriptions & Mappings**:  
+- **Country Mapping**: `1 -> Australia, 2 -> Austria, 3 -> Belgium, ... 42 -> USA, etc.`  
+- **Color Mapping**: `1 -> Beige, 2 -> Black, 3 -> Blue, 4 -> Brown, ...`  
+- **Main Categories**: `1 -> Trousers, 2 -> Skirts, 3 -> Blouses, 4 -> Sale`  
+
 ### 📌 Data Processing Steps
 🔹 **Handling Missing Values** – Using Mean/Mode imputation.  
 🔹 **Encoding Categorical Variables** – Applying OneHotEncoder & LabelEncoder.  
@@ -179,7 +184,6 @@ print("Recommended Product Colors:", recommendations)
 
 ## 📌 Get in Touch
 📧 pranavsharma1395@gmail.com  
-📞 +1 (778) 598-6373  
 🔗 [LinkedIn](https://www.linkedin.com/in/pranav-harish-sharma/)  
 🔗 [GitHub](https://github.com/user/ShopperLens)  
 
