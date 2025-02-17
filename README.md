@@ -72,7 +72,10 @@ It includes:
 🔹 **Feature Engineering** – Generating explicit rating bins for Item-Based Filtering.  
 
 📌 **Flowchart:**  
-<img src="https://github.com/user-attachments/assets/bfd13c0c-f577-40b3-bcc1-8ca1c254de81" style="width:50%;">
+<div align = "center">
+<img src="https://github.com/user-attachments/assets/bfd13c0c-f577-40b3-bcc1-8ca1c254de81" style="width:50%;">    
+</div>
+
 
 
 ---
