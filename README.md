@@ -1,4 +1,4 @@
-# 🛒 ShopperLense: Intelligent Personalized Recommendation System
+![ProjectPPT - Trishna_page-0017](https://github.com/user-attachments/assets/681a5248-c9c0-45fc-bc03-ebf5b3acc4fe)# 🛒 ShopperLense: Intelligent Personalized Recommendation System
 ![ShopperLens Banner](https://github.com/user-attachments/assets/fee9463f-1f6c-4e95-814a-925fbc5d63e5)
 
 ---
@@ -72,10 +72,6 @@ It includes:
 🔹 **Feature Engineering** – Generating explicit rating bins for Item-Based Filtering.  
 ![ProjectPPT - Trishna_page-0008](https://github.com/user-attachments/assets/a19d301e-d8e3-495d-a931-5b55c3560c00)
 
-📌 **Flowchart:**  
-<div align = "center">
-<img src="https://github.com/user-attachments/assets/bfd13c0c-f577-40b3-bcc1-8ca1c254de81" style="width:50%;">    
-</div>
 
 ---
 
@@ -99,43 +95,51 @@ Before training the models, we conducted **EDA to understand data distributions,
 
 
 ---
-![ProjectPPT - Trishna_page-0013](https://github.com/user-attachments/assets/5d02eb3e-2e90-415f-9e44-f3637a67500f)
 
 ## 🛠 Model Architecture
 ShopperLens follows a **multi-branch modeling approach**, consisting of:
 - 1️⃣ **Memory-Based Model (LightGBM)** – Analyzes session attributes.
 - 2️⃣ **Collaborative Filtering (SVD + LightGBM)** – Learns user-item interaction patterns.
 - 3️⃣ **Item-Based Filtering (KNN)** – Recommends similar products using cosine similarity.
-
 📌 **Overall System Flowchart**  
-![Overall Model Flow](https://github.com/user-attachments/assets/shopperlens-overall-flowchart)
+<div align = "center">
+<img src="https://github.com/user-attachments/assets/bfd13c0c-f577-40b3-bcc1-8ca1c254de81" style="width:50%;">    
+</div>
 
 ### **Branch 1: Memory-Based Learning (LightGBM)**
 - **Objective:** Predict user preferences based on session attributes.
 - **Hyperparameters:** `max_depth=3, n_estimators=4, learning_rate=0.06`
 - **Result:** Achieved **80% accuracy** and **AUC score of 0.98**.
 - **Use Case:** Works well for users with clear session behavior.
+![ProjectPPT - Trishna_page-0014](https://github.com/user-attachments/assets/91807f10-46ee-4da7-8cba-c1d1857be242)
 
-📌 **Flowchart:**  
-![Memory-Based Flowchart](https://github.com/user-attachments/assets/shopperlens-memory-based)
+📌 **Outputs:**  
+![ProjectPPT - Trishna_page-0015](https://github.com/user-attachments/assets/19a4cdd1-9f3d-431d-b4b5-f45da8ef9339)
+![ProjectPPT - Trishna_page-0016](https://github.com/user-attachments/assets/ecfca371-77ff-402a-8093-7d8f17168627)
 
 ### **Branch 2: Collaborative Filtering (SVD + LightGBM)**
 - **Objective:** Learn user-item relationships for recommendations.
 - **Hyperparameters:** `SVD + LightGBM for further refinement`
 - **Result:** Achieved **75% accuracy** and **AUC score of 0.97**.
 - **Use Case:** Useful for repeat customers with historical data.
+![ProjectPPT - Trishna_page-0017](https://github.com/user-attachments/assets/08f2ba94-81e1-41c5-bf30-158eab769dd2)
 
-📌 **Flowchart:**  
-![Collaborative Filtering Flowchart](https://github.com/user-attachments/assets/shopperlens-collaborative-filtering)
+📌 **Outputs:**  
+![ProjectPPT - Trishna_page-0018](https://github.com/user-attachments/assets/5b08d975-3e11-4817-86c2-41482eb3b0c5)
+![ProjectPPT - Trishna_page-0019](https://github.com/user-attachments/assets/ccc01cac-aaee-4d90-aca1-41378806ff95)
+
 
 ### **Branch 3: Item-Based Filtering (KNN)**
 - **Objective:** Find similar products based on cosine similarity.
 - **Hyperparameters:** `K=10 neighbors`
 - **Result:** Achieved **RMSE = 0.4777, MAE = 0.3880**.
 - **Use Case:** Ideal for similar product suggestions.
+![ProjectPPT - Trishna_page-0020](https://github.com/user-attachments/assets/824d07b5-f5f4-46f2-8db1-24b946eb7925)
 
-📌 **Flowchart:**  
-![Item-Based Flowchart](https://github.com/user-attachments/assets/shopperlens-knn)
+📌 **Outputs:**  
+![ProjectPPT - Trishna_page-0021](https://github.com/user-attachments/assets/7cde6caf-1196-418d-bb4c-ce8b6c6883b8)
+![ProjectPPT - Trishna_page-0022](https://github.com/user-attachments/assets/8c370925-50f9-4cbd-85da-d20a470a8c51)
+
 
 ---
 
@@ -160,7 +164,7 @@ print("Recommended Product Colors:", recommendations)
 ```
 📌 **Visualization of Recommendations:**
 ![Recommendation Output](https://github.com/user-attachments/assets/shopperlens-recommendations)
-
+# Add Branch 1,2,3 recommendations here 
 
 ---
 
@@ -190,15 +194,15 @@ The results indicate that **LightGBM provides the highest accuracy**, making it 
 ---
 
 ## 📚 References
-📖 LightGBM Documentation  
-📖 Surprise Library for Collaborative Filtering  
-📖 Scikit-Learn Documentation  
-
+📖 [LightGBM Documentation](https://lightgbm.readthedocs.io/)  
+📖 [Surprise Library for Collaborative Filtering](https://surpriselib.com/)  
+📖 [Scikit-Learn Documentation](https://scikit-learn.org/)  
+📖 [Dataset (UC Irvine Machine Learning Repository)](https://archive.ics.uci.edu/dataset/553/clickstream+data+for+online+shopping)  
 ---
 
 ## 📌 Get in Touch
 📧 pranavsharma1395@gmail.com  
-🔗 [LinkedIn](https://www.linkedin.com/in/pranav-harish-sharma/)  
-🔗 [GitHub](https://github.com/user/ShopperLens)  
+🔗 [LinkedIn](www.linkedin.com/in/pranav-sharma-180895120)  
+🔗 [GitHub]([https://github.com/user/ShopperLens](https://github.com/Pranavsharma13))  
 
 🚀 *"Optimizing E-Commerce with AI-Powered Personalized Recommendations!"*
