@@ -1,4 +1,4 @@
-# 🚀 ShopperLens: Intelligent Personalized Recommendation System
+# 🚀 ShopperLense: Intelligent Personalized Recommendation System
 
 ![ShopperLens Banner](https://github.com/user-attachments/assets/fee9463f-1f6c-4e95-814a-925fbc5d63e5)
 
