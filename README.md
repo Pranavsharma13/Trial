@@ -187,9 +187,7 @@ The results indicate that **LightGBM provides the highest accuracy**, making it 
 ---
 
 ## 🚀 Future Enhancements
-🔹 **Hybrid Approach** – Combining Memory-Based and Collaborative Filtering.  
-🔹 **Real-Time API Deployment** – Flask/FastAPI for live recommendations.  
-🔹 **Enhanced Feature Engineering** – Incorporating behavioral analytics.
+![ProjectPPT - Trishna_page-0025](https://github.com/user-attachments/assets/16f93812-7f71-4749-afe6-7a9b6ff76ca5)
 
 ---
 
