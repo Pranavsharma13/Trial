@@ -52,9 +52,9 @@ ShopperLens tackles these issues by employing a **multi-model recommendation sys
 The dataset used is **E-Shop Clothing 2008**, consisting of **shopping behavior data collected from an online retail store**. 
 ([UC Irvine Machine Learning Repository](https://archive.ics.uci.edu/dataset/553/clickstream+data+for+online+shopping)).
 It includes:
-✔ **User Sessions** – Tracks clicks, views, and purchase interactions.  
-✔ **Product Attributes** – Details such as color, category, price, metadata.  
-✔ **Transaction History** – Captures orders, session IDs, and timestamps.  
+- ✔ **User Sessions** – Tracks clicks, views, and purchase interactions.
+- ✔ **Product Attributes** – Details such as color, category, price, metadata.
+- ✔ **Transaction History** – Captures orders, session IDs, and timestamps.  
 
 ### 📌 Data Processing Steps
 🔹 **Handling Missing Values** – Using Mean/Mode imputation.  
