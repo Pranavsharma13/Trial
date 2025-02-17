@@ -70,13 +70,12 @@ It includes:
 🔹 **Encoding Categorical Variables** – Applying OneHotEncoder & LabelEncoder.  
 🔹 **Balancing Data** – Addressing class imbalance with **ADASYN & SMOTE**.  
 🔹 **Feature Engineering** – Generating explicit rating bins for Item-Based Filtering.  
+![ProjectPPT - Trishna_page-0008](https://github.com/user-attachments/assets/a19d301e-d8e3-495d-a931-5b55c3560c00)
 
 📌 **Flowchart:**  
 <div align = "center">
 <img src="https://github.com/user-attachments/assets/bfd13c0c-f577-40b3-bcc1-8ca1c254de81" style="width:50%;">    
 </div>
-
-
 
 ---
 
