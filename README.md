@@ -8,11 +8,11 @@
 
 
 ### 🔥 **Key Features**
-✅ **Three-Branch Model Architecture**: Memory-Based, Collaborative Filtering, and Item-Based approaches.
-✅ **Hyperparameter-Tuned Models**: LightGBM, SVD, and KNN for enhanced performance.
-✅ **Data Preprocessing & Feature Engineering**: Handling imbalances, encoding categorical data, and scaling numerical values.
-✅ **User-Centric Testing**: Sample data inputs showcase real-time recommendation workflow.
-✅ **Optimized Performance**: Model evaluation metrics guide model selection and refinements.
+- ✅ **Three-Branch Model Architecture**: Memory-Based, Collaborative Filtering, and Item-Based approaches.
+- ✅ **Hyperparameter-Tuned Models**: LightGBM, SVD, and KNN for enhanced performance.
+- ✅ **Data Preprocessing & Feature Engineering**: Handling imbalances, encoding categorical data, and scaling numerical values.
+- ✅ **User-Centric Testing**: Sample data inputs showcase real-time recommendation workflow.
+- ✅ **Optimized Performance**: Model evaluation metrics guide model selection and refinements.
 
 ### 🏗 **Tech Stack**
 🚀 **Languages**: Python  
@@ -126,9 +126,9 @@ ShopperLens follows a **multi-branch modeling approach**, consisting of:
 ShopperLens uses sample test cases to **validate recommendation accuracy**.
 
 ### 📌 Sample Test Case Workflow:
-1️⃣ **New User Data Input** – Generates recommendations based on limited session history.  
-2️⃣ **Session-Based Predictions** – Provides product recommendations using LightGBM.  
-3️⃣ **Personalized Recommendation Output** – Displays top predicted products based on model rankings.  
+- 1️⃣ **New User Data Input** – Generates recommendations based on limited session history.
+- 2️⃣ **Session-Based Predictions** – Provides product recommendations using LightGBM.
+- 3️⃣ **Personalized Recommendation Output** – Displays top predicted products based on model rankings.  
 
 📌 **Sample Code Execution:**
 ```python
