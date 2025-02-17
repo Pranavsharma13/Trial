@@ -163,8 +163,9 @@ recommendations = lgb_model.predict(preprocessor.transform(new_data_point))
 print("Recommended Product Colors:", recommendations)
 ```
 📌 **Visualization of Recommendations:**
-![ProjectPPT - Updated Reco_page-0027](https://github.com/user-attachments/assets/dfd1a872-0595-4fb0-9842-4728586bc3e5)
-![ProjectPPT - Updated Reco_page-0028](https://github.com/user-attachments/assets/f0516358-436b-4924-a66c-bfe1847f39ae)
+
+![ProjectPPT - Updated Reco_page-0001](https://github.com/user-attachments/assets/55e9ba90-221d-4066-aee0-c69b958c069a)
+![ProjectPPT - Updated Reco_page-0002](https://github.com/user-attachments/assets/e8d8f66a-d571-469d-9bf1-754ce6e5a14a)
 
 
 ---
