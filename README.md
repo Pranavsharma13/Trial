@@ -5,6 +5,7 @@
 
 ## 🌟 Project Overview
 **ShopperLens** is an advanced AI-powered recommendation system designed to enhance the online shopping experience through **personalized product suggestions**. By leveraging **machine learning and data-driven analytics**, ShopperLens delivers **highly relevant recommendations** to users based on their behavior, past purchases, and session interactions.
+![ProjectPPT - Trishna_page-0002](https://github.com/user-attachments/assets/144007d6-1f55-4cce-bdbe-dac02bf2cdee)
 
 
 ### 🔥 **Key Features**
@@ -37,6 +38,7 @@
 11. [📚 References](#-references)
 
 ---
+![ProjectPPT - Trishna_page-0003](https://github.com/user-attachments/assets/740fc2a3-6ef8-430f-bad5-96038eeb80f1)
 
 ## 🚀 Project Motivation
 E-commerce platforms face challenges in delivering **highly relevant recommendations** due to:
@@ -45,6 +47,7 @@ E-commerce platforms face challenges in delivering **highly relevant recommendat
 - **Balancing personalization vs. diversity** in suggestions.
 
 ShopperLens tackles these issues by employing a **multi-model recommendation system** that improves accuracy and engagement.
+![ProjectPPT - Trishna_page-0004](https://github.com/user-attachments/assets/27c62f3b-8c48-4ac6-a76f-7f947f812030)
 
 ---
 
@@ -60,6 +63,7 @@ It includes:
 - **Country Mapping**: `1 -> Australia, 2 -> Austria, 3 -> Belgium, ... 42 -> USA, etc.`  
 - **Color Mapping**: `1 -> Beige, 2 -> Black, 3 -> Blue, 4 -> Brown, ...`  
 - **Main Categories**: `1 -> Trousers, 2 -> Skirts, 3 -> Blouses, 4 -> Sale`  
+![ProjectPPT - Trishna_page-0005](https://github.com/user-attachments/assets/a0f4dc89-bc48-4893-9917-6b7dab9990dc)
 
 ### 📌 Data Processing Steps
 🔹 **Handling Missing Values** – Using Mean/Mode imputation.  
@@ -68,7 +72,7 @@ It includes:
 🔹 **Feature Engineering** – Generating explicit rating bins for Item-Based Filtering.  
 
 📌 **Flowchart:**  
-![Data Preprocessing Flowchart](https://github.com/user-attachments/assets/shopperlens-preprocessing)
+![Project Layout and Overview 2 (1)](https://github.com/user-attachments/assets/bfd13c0c-f577-40b3-bcc1-8ca1c254de81)
 
 ---
 
