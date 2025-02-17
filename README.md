@@ -159,6 +159,8 @@ print("Recommended Product Colors:", recommendations)
 | SVD + LightGBM | **75%** | **0.97** | Works well with sparse data | Cold start issue |
 | KNN | **RMSE 0.4777** | N/A | Finds similar products | Sensitive to K hyperparameter |
 
+The results indicate that **LightGBM provides the highest accuracy**, making it suitable for session-based predictions, while **SVD + LightGBM effectively captures user-item relationships**. **KNN serves as a complementary approach**, improving recommendations based on item similarity.
+
 ---
 
 ## 💡 Key Insights
