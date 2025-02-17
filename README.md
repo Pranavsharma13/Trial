@@ -187,7 +187,7 @@ The results indicate that **LightGBM provides the highest accuracy**, making it 
 ---
 
 ## 🚀 Future Enhancements
-![ProjectPPT - Trishna_page-0025](https://github.com/user-attachments/assets/16f93812-7f71-4749-afe6-7a9b6ff76ca5)
+![ProjectPPT - Trishna_page-0025](https://github.com/user-attachments/assets/af279c58-ebe0-4300-baf6-9e4c27f4eb7e)
 
 ---
 
