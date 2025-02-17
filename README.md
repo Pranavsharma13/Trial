@@ -81,6 +81,7 @@ It includes:
 
 ## 📈 Exploratory Data Analysis (EDA)
 Before training the models, we conducted **EDA to understand data distributions, patterns, and correlations**.
+![ProjectPPT - Trishna_page-0009](https://github.com/user-attachments/assets/3de27890-ed13-4abf-8c80-fe74c97ae01b)
 
 ### 📊 Key Findings
 - **Most frequently purchased product categories** were analyzed.
@@ -91,11 +92,15 @@ Before training the models, we conducted **EDA to understand data distributions,
 📌 **Visualizations:**
 - **Purchase Frequency Distribution**
 - **Top Selling Product Categories**
-- **Feature Correlation Heatmap**
+- **Distributions of Color and other features**
+![ProjectPPT - Trishna_page-0010](https://github.com/user-attachments/assets/893aec2a-57d2-4df3-81d3-90c067ae2c60)
+![ProjectPPT - Trishna_page-0011](https://github.com/user-attachments/assets/52c1b8ae-bed2-4ea0-98eb-5cd859e84b89)
+![ProjectPPT - Trishna_page-0012](https://github.com/user-attachments/assets/0ee2c83e-af45-4e2c-8c9d-55abc653da4c)
 
-![EDA Visualization](https://github.com/user-attachments/assets/shopperlens-eda)
 
 ---
+![ProjectPPT - Trishna_page-0013](https://github.com/user-attachments/assets/5d02eb3e-2e90-415f-9e44-f3637a67500f)
+
 ## 🛠 Model Architecture
 ShopperLens follows a **multi-branch modeling approach**, consisting of:
 - 1️⃣ **Memory-Based Model (LightGBM)** – Analyzes session attributes.
