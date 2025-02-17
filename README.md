@@ -1,7 +1,6 @@
 # 🚀 ShopperLens: AI-Driven Personalized Recommendation System
 
-![ShopperLens Banner](https://github.com/user-attachments/assets/shopperlens-banner)
-![Draft2_page-0001](https://github.com/user-attachments/assets/fee9463f-1f6c-4e95-814a-925fbc5d63e5)
+![ShopperLens Banner](https://github.com/user-attachments/assets/fee9463f-1f6c-4e95-814a-925fbc5d63e5)
 
 ---
 
