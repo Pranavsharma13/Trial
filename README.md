@@ -50,7 +50,7 @@ ShopperLens tackles these issues by employing a **multi-model recommendation sys
 ---
 
 ## 📊 Dataset Overview
-The dataset used is **E-Shop Clothing 2008**, consisting of **shopping behavior data collected from an online retail store**. ([Kaggle]([https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents](https://archive.ics.uci.edu/dataset/553/clickstream+data+for+online+shopping))).
+The dataset used is **E-Shop Clothing 2008**, consisting of **shopping behavior data collected from an online retail store**. ([Kaggle](https://archive.ics.uci.edu/dataset/553/clickstream+data+for+online+shopping)).
 It includes:
 ✔ **User Sessions** – Tracks clicks, views, and purchase interactions.  
 ✔ **Product Attributes** – Details such as color, category, price, metadata.  
